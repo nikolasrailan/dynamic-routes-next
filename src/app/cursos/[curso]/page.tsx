@@ -1,3 +1,5 @@
+import { getCurso } from "@/api/cursos";
+
 type PageParams = {
   params: {
     curso: string;
@@ -5,10 +7,12 @@ type PageParams = {
 };
 
 export default async function CursoPage({ params }: PageParams) {
+  const curso = await getCurso(params.curso);
+
   return (
     <div>
       <main>
-        <h1>Curso: {params.curso}</h1>
+        <h1>{curso.nome}</h1>
       </main>
     </div>
   );
