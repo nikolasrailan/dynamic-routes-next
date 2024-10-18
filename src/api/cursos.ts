@@ -32,7 +32,7 @@ export async function getCurso(curso: string) {
 
 export async function getAula(curso: string, aula: string) {
   const response = await fetch(
-    `https://api.origamid.online/cursos/${curso}/aula`
+    `https://api.origamid.online/cursos/${curso}/${aula}`
   );
   return (await response.json()) as Aula;
 }
