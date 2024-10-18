@@ -3,7 +3,7 @@ type Curso = {
   slug: string;
   nome: string;
   descricao: string;
-  total_aula: number;
+  total_aulas: number;
   total_horas: number;
 };
 
