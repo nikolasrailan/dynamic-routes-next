@@ -12,3 +12,26 @@ services:
     environment:
       - NODE_ENV=development
     command: npm run dev
+
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sua_senha
+      MYSQL_DATABASE: nome_do_banco
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: sua_senha
+
+volumes:
+  mysql_data:
