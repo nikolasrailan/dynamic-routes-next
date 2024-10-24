@@ -8,6 +8,7 @@ export default async function CursosPage() {
     <div>
       <main>
         <h1>Cursos</h1>
+        <h1>ioe</h1>
         <ul>
           {cursos.map((curso) => (
             <li key={curso.id}>
